@@ -7,6 +7,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
+@media print {
+  @page { size: A4 portrait; margin: 1cm 1.2cm; }
+
+  /* 固定導覽列不列印 */
+  nav { display: none !important; }
+
+  /* 各 section 不跨頁截斷 */
+  .stat-card, .social-card, .ben-card,
+  .flow-card, .example, .flow-struct,
+  .plan-card, .plan-head, .plan-body, .plan-foot,
+  .plan-bonus { break-inside: avoid; }
+
+  /* 整排卡片保持同頁 */
+  .stats-grid, .social-grid, .benefits-grid,
+  .flow-grid, .plans-grid-3, .plans-grid-2 { break-inside: avoid; }
+
+  /* 強制換頁：引流短文、季方案、年方案各自新頁 */
+  #tv       { break-before: page; }
+  #seasonal { break-before: page; }
+  #annual   { break-before: page; }
+
+  /* Hero 不需要 padding-top（nav 已隱藏） */
+  #hero { padding-top: 0; min-height: auto; }
+
+  /* section padding 縮小節省空間 */
+  .sec { padding: 1.5cm 0; }
+
+  /* 不顯示捲軸空白 */
+  body { overflow: visible; }
+}
+</style>
+<style>
 :root{
   --ivory:#FDFAF4; --gold:#C9A84C; --gold-l:#F0DFA0; --gold-d:#9A7A2A;
   --wine:#6B2737; --wine-d:#4A1520; --ink:#1A1A1A; --gray:#5A5A5A;
@@ -377,7 +409,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:3.5rem 8%;text-
         </ul>
       </div>
       <div class="plan-foot">
-        <div class="plan-summary">季播出 108 次 + 5 平台社群全曝光</div>
+        <div class="plan-summary">季播出 108 次 + 5種平台社群全曝光</div>
         <div class="plan-note">◎ 附感謝狀</div>
       </div>
     </div>
@@ -409,7 +441,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:3.5rem 8%;text-
         </ul>
       </div>
       <div class="plan-foot">
-        <div class="plan-summary">每天至少 5 次・5 平台每月露出各 3 次</div>
+        <div class="plan-summary">每天至少 5 次・5種平台每月露出各 3 次</div>
         <div class="plan-note">◎ 附感謝狀</div>
       </div>
     </div>
@@ -453,7 +485,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:3.5rem 8%;text-
         </div>
       </div>
       <div class="plan-foot">
-        <div class="plan-summary">年播 1,100 次・5 平台每月露出各 3 次，加贈短影音</div>
+        <div class="plan-summary">年播 1,100 次・5種平台每月露出各 3 次，加贈短影音</div>
         <div class="plan-note">◎ 附感謝狀</div>
       </div>
     </div>
@@ -489,7 +521,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:3.5rem 8%;text-
         </div>
       </div>
       <div class="plan-foot">
-        <div class="plan-summary">年播 2,160 次・5 平台每月露出各 4 次，加贈短影音</div>
+        <div class="plan-summary">年播 2,160 次・5種平台每月露出各 4 次，加贈短影音</div>
         <div class="plan-note">◎ 附感謝狀</div>
       </div>
     </div>
